@@ -25,9 +25,9 @@ module.exports = {
       user : "carcareapp",
       host : "138.197.108.171",
       ref  : "origin/master",
-      repo : "git@github.com:repo.git",
-      path : "/var/www/production",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
+      repo : "https://github.com/noahjohn9259/carcareapp.git",
+      path : "/home/carcareapp",
+      "post-deploy" : "nvm install && npm install && /home/carcareapp/.nvm/versions/node/v6.9.4/bin/pm2 startOrRestart ~/source/ecosystem.config.js --env production"
     }
   }
 }
