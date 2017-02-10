@@ -26,15 +26,12 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-#dist folder
-dist
-
 # IDEA/Webstorm project files
 .idea
 *.iml
 
 #VSCode metadata
 .vscode
-
-# Mac files
-.DS_Store
+ssh/id_rsa
+ssh/id_rsa.ppk
+ssh/id_rsa.pub
