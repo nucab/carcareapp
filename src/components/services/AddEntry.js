@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { isEmpty } from 'lodash';
 
-import { formatDate } from '../../../server/shared/tools/dateUtils';
+// import { formatDate } from '../../../server/shared/tools/dateUtils';
+import dateFormat from 'dateformat';
 
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
@@ -68,7 +69,7 @@ class AddEntry extends Component {
   }
 
   datePickerOnChange = (e, date) => {
-    const formatDateToString = formatDate(date);
+    const formatDateToString = dateFormat(date, 'isoDateTime');
     // console.log(formatDateToString);
     this.setState({
       replacementDate: formatDateToString
@@ -102,7 +103,7 @@ class AddEntry extends Component {
       });
 
       this.props.actions.serviceActions.addService(this.state).then(
-        (data) => {
+        () => {
           // this.setState({
           //   isLoading: false,
           //   brandName: '',

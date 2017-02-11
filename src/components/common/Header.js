@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link, IndexLink } from 'react-router';
 
-import { isset, empty } from 'locutus/php/var';
+import { empty } from 'locutus/php/var';
 
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
-import IconMenu from 'material-ui/IconMenu';
+// import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
-import FlatButton from 'material-ui/FlatButton';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+// import FlatButton from 'material-ui/FlatButton';
+// import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import Drawer from 'material-ui/Drawer';
@@ -20,7 +20,7 @@ import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 
 import * as appBarActions from '../../actions/appBarActions';
-import serviceTypes from '../../config/config';
+// import serviceTypes from '../../config/config';
 
 const avatarStyle = {
   color: "#FFF"
@@ -35,38 +35,6 @@ const menuItemStyle = {
   paddingRight: '0px'
 };
 
-class Login extends Component {
-
-  static muiName = 'FlatButton';
-  render() {
-    return (
-      <FlatButton {...this.props}><Link to="/login">Login</Link></FlatButton>
-    );
-  }
-}
-
-const Logged = (props) => (
-  <IconMenu
-    {...props}
-    iconButtonElement={
-      <IconButton><MoreVertIcon /></IconButton>
-    }
-    targetOrigin={{horizontal: 'right', vertical: 'top'}}
-    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-  >
-    <MenuItem primaryText="Refresh" />
-    <MenuItem primaryText="Help" />
-    <MenuItem primaryText="Sign out" />
-  </IconMenu>
-);
-
-Logged.muiName = 'IconMenu';
-
-
-/**
- * This example is taking advantage of the composability of the `AppBar`
- * to render different components depending on the application state.
- */
 class Header extends Component {
 
   static propTypes = {
@@ -75,9 +43,6 @@ class Header extends Component {
     logged: PropTypes.bool
   };
 
-  componentWillMount() {
-
-  }
 
   constructor(props) {
     super(props);
@@ -97,8 +62,6 @@ class Header extends Component {
   }
 
   render() {
-    const { logged } = this.props;
-
     const { serviceType } = this.props.params;
 
     return (
@@ -142,7 +105,6 @@ class Header extends Component {
             <IconButton className="hidden-sm hidden-md hidden-lg" onTouchTap={this.drawerToggle}><NavigationMenu className="hidden-sm hidden-md hidden-lg" /></IconButton> :
             <Link to={this.props.serviceAction == 'LIST_ENTRIES' ? '/' : '/service/' + serviceType}><IconButton><NavigationArrowBack color={'#FFF'} /></IconButton></Link>
           }
-          iconElementRight={logged ? <Logged /> : <Login />}
         />
       </div>
     );

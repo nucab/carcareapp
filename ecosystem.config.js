@@ -8,7 +8,7 @@ module.exports = {
     // First application
     {
       name      : "carcarecapp",
-      script    : "./server/index.js",
+      script    : "./server.js",
       env_production : {
         NODE_ENV: "production"
       }
@@ -26,8 +26,8 @@ module.exports = {
       host : "138.197.108.171",
       ref  : "origin/master",
       repo : "https://github.com/noahjohn9259/carcareapp.git",
-      path : "/home/carcareapp",
-      "post-deploy" : "nvm install && npm install && /home/carcareapp/.nvm/versions/node/v6.9.4/bin/pm2 startOrRestart ~/source/ecosystem.config.js --env production"
+      path : "/home/carcareapp/www",
+      "post-deploy" : "nvm install && npm install && /home/carcareapp/.nvm/versions/node/v6.9.4/bin/pm2 startOrRestart ~/www/source/ecosystem.config.js --env production"
     }
   }
 }

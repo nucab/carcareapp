@@ -12,10 +12,6 @@ import serviceTypes from '../../config/config';
 
 import ListRow from './ListRow';
 
-const buttonStyle = {
-  marginTop: 15
-};
-
 class ManageServicePage extends Component {
 
   static contextTypes = {
@@ -55,12 +51,12 @@ class ManageServicePage extends Component {
       .catch(err => {
         console.log(err);
       });
+    this.setState({
+      serviceType: this.props.params.serviceType
+    });
   }
 
   componentDidMount() {
-    this.setState({
-      serviceType: this.props.params.serviceType
-    })
     document.body.classList.remove('show-spinner');
   }
 

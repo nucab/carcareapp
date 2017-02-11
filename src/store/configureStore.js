@@ -1,20 +1,20 @@
 import {createStore, compose, applyMiddleware} from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
-import faviconMiddleware from 'redux-favicon';
+// import faviconMiddleware from 'redux-favicon';
 import rootReducer from '../reducers';
 
 // Redux Favicon accepts a configuration object. The options are explained below.
-const faviconConfig = {
-  animation:  'slide',
-  position:   'up',
-  type:       'rectangle',
-  bgColor:    '#123456',
-  textColor:  '#314159'
-};
+// const faviconConfig = {
+//   animation:  'slide',
+//   position:   'up',
+//   type:       'rectangle',
+//   bgColor:    '#123456',
+//   textColor:  '#314159'
+// };
 
 // Pre-load our middleware with our config.
-const loadedFaviconMiddleware = faviconMiddleware(faviconConfig);
+// const loadedFaviconMiddleware = faviconMiddleware(faviconConfig);
 
 function configureStoreProd(initialState) {
   const middlewares = [
@@ -36,7 +36,7 @@ function configureStoreDev(initialState) {
 
 
     // Use as you would any other middleware.
-    loadedFaviconMiddleware,
+    // loadedFaviconMiddleware,
     // (Using the condensed createStore released in Redux v3.1.0)
 
     // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.

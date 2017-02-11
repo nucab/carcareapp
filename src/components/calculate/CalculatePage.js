@@ -25,6 +25,10 @@ const buttonStyle = {
 
 class CalculatePage extends Component {
 
+  static propTypes = {
+    actions: PropTypes.object.isRequired,
+  };
+
   constructor(props) {
     super(props);
 
@@ -38,7 +42,8 @@ class CalculatePage extends Component {
   }
 
   componentWillMount() {
-    this.props.actions.updatePageTitle('Calculate Consumption');
+    const { actions } = this.props;
+    actions.updatePageTitle('Calculate Consumption');
   }
 
   validateInput(data) {
@@ -55,7 +60,7 @@ class CalculatePage extends Component {
     return {
       errors,
       isValid: isEmpty(errors)
-    }
+    };
   }
 
   onChange = (e) => {

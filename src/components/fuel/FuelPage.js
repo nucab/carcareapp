@@ -15,7 +15,7 @@ import * as appBarActions from '../../actions/appBarActions';
 const buttonAlertStyle = {
   paddingLeft: 16,
   paddingRight: 16,
-}
+};
 
 class FuelPage extends Component {
 

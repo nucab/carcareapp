@@ -8,7 +8,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import 'babel-polyfill';
 import routes from './routes';
-import * as serviceActions from './actions/serviceActions';
+// import * as serviceActions from './actions/serviceActions';
 import configureStore from './store/configureStore';
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 

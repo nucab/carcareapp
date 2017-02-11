@@ -70,7 +70,7 @@ class TravelPage extends Component {
     return {
       errors,
       isValid: isEmpty(errors)
-    }
+    };
   }
 
   onChange = (e) => {

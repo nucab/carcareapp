@@ -2,12 +2,9 @@ import axios from 'axios';
 
 import * as types from './actionTypes';
 
-
-
 export function addService(serviceData) {
   return dispatch => {
     return axios.post('/api/services', serviceData).then(({data}) => {
-      console.log(data);
       dispatch(addServiceSuccess(data));
     });
   };
@@ -17,7 +14,7 @@ export function addServiceSuccess(service) {
   return {
     type: types.ADD_SERVICE_SUCCESS,
     service
-  }
+  };
 }
 
 export function updateService(service) {
@@ -40,7 +37,7 @@ export function updateServiceSuccess(service) {
   return {
     type: types.UPDATE_SERVICE_SUCCESS,
     service
-  }
+  };
 }
 
 export function loadServicesByType(serviceType = 'engine') {
@@ -57,14 +54,14 @@ export function loadServicesSuccess(services) {
   return {
     type: types.LOAD_SERVICES_SUCCESS,
     services
-  }
+  };
 }
 
 export function loadServiceSuccess(service) {
   return {
     type: types.LOAD_SERVICE_SUCCESS,
     service
-  }
+  };
 }
 
 export function loadService(serviceId) {

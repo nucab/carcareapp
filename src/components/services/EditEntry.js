@@ -2,7 +2,6 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import moment from 'moment';
 import dateFormat from 'dateformat';
 
 import { isEmpty } from 'lodash';
@@ -11,8 +10,6 @@ import { empty } from 'locutus/php/var';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
 import RaisedButton from 'material-ui/RaisedButton';
-
-import { formatDate } from '../../../server/shared/tools/dateUtils';
 
 import * as serviceActions from '../../actions/serviceActions';
 import * as flashMessages from '../../actions/flashMessages';
@@ -84,9 +81,7 @@ class EditEntry extends Component {
     //   service: _service
     // });
 
-
     const formatDateToString = dateFormat(date, 'isoDateTime');
-    // console.log(formatDateToString);
     service.replacementDate = formatDateToString;
     this.setState({
       service
@@ -127,15 +122,11 @@ class EditEntry extends Component {
 
     const { service } = this.state;
 
-    // console.log(service);
-
     if(this.isValid(service)) {
       this.setState({
         errors: {},
         // isLoading: true
       });
-      console.log(service);
-
       this.props.actions.serviceActions.updateService(service).then(
         () => {
           this.context.router.push(`/service/${this.props.params.serviceType}`);
@@ -150,9 +141,9 @@ class EditEntry extends Component {
 
   render() {
     const { errors, service } = this.state;
-    let replacementDate = service.replacementDate;
+    // let replacementDate = service.replacementDate;
 
-    if(!isEmpty) replacementDate = dateFormat(replacementDate);
+    // if(!isEmpty) replacementDate = dateFormat(replacementDate);
     // console.log(service.replacementDate);
     // console.log(service.replacementDate);
     // console.log(replacementDate);

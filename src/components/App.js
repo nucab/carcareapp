@@ -24,7 +24,8 @@ class App extends Component {
 
   static propTypes = {
     children: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired
+    actions: PropTypes.object.isRequired,
+    location: PropTypes.object,
   };
 
   constructor(props) {

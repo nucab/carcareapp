@@ -25,12 +25,12 @@ export function updateNavIcon(button) {
   return {
     type: types.APPBAR_MENU_BUTTON,
     button
-  }
+  };
 }
 
 export function updateNavAction(serviceAction) {
   return {
     type: types.APPBAR_ACTION,
     serviceAction
-  }
+  };
 }
