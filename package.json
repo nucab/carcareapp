@@ -1,7 +1,7 @@
 {
-  "name": "react-slingshot",
-  "version": "5.0.0",
-  "description": "Starter kit for creating apps with React and Redux",
+  "name": "carcareapp",
+  "version": "1.0.0",
+  "description": "Car Care App",
   "engines": {
     "npm": ">=3"
   },
@@ -29,7 +29,7 @@
     "open:cover": "npm run test:cover && open coverage/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
   },
-  "author": "Cory House",
+  "author": "Noah John Ucab",
   "license": "MIT",
   "dependencies": {
     "axios": "0.15.3",
@@ -135,7 +135,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/coryhouse/react-slingshot"
+    "url": "https://github.com/noahjohn9259/carcareapp"
   },
   "proxy": "http://localhost:8080"
 }
