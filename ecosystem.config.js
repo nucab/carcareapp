@@ -7,8 +7,16 @@ module.exports = {
 
     // First application
     {
-      name      : "carcarecapp2",
+      name      : "carcarecapp",
       script    : "./server.js",
+      env_production : {
+        NODE_ENV: "production"
+      }
+    },
+    {
+      name      : "api",
+      script    : "./server/index.js",
+      interpreter_args: "./node_modules/.bin/babel-node",
       env_production : {
         NODE_ENV: "production"
       }
