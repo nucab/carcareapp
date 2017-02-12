@@ -64,7 +64,7 @@ class HomePage extends Component {
           <Link to="/service/voltage"><ListItem style={listItemStyle} primaryText="High Voltage Wire" leftIcon={<ContentInbox />} /></Link>
           <Link to="/service/belt"><ListItem style={listItemStyle} primaryText="Timing Belt" leftIcon={<ContentInbox />} /></Link>
           <Divider style={dividerStyle} />
-          <Link to="/service/brake"><ListItem style={listItemStyle} primaryText="Brake Disc" leftIcon={<ContentInbox />} /></Link>
+          <Link to="/service/brake-disc"><ListItem style={listItemStyle} primaryText="Brake Disc" leftIcon={<ContentInbox />} /></Link>
           <Link to="/service/brake-pads"><ListItem style={listItemStyle} primaryText="Brake Pads" leftIcon={<ContentInbox />} /></Link>
         </List>
       </div>
