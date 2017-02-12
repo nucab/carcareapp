@@ -27,7 +27,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "https://github.com/noahjohn9259/carcareapp.git",
       path : "/home/carcareapp/www",
-      "post-deploy" : "nvm install && npm install && ~/.nvm/versions/node/v6.9.4/bin/pm2 startOrRestart ~/www/source/ecosystem.config.js --env production"
+      "post-deploy" : "nvm install && npm install && npm run build && ~/.nvm/versions/node/v6.9.4/bin/pm2 startOrRestart ~/www/source/ecosystem.config.js --env production"
     }
   }
 }
