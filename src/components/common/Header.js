@@ -89,12 +89,12 @@ class Header extends Component {
           </div>
 
           <MenuItem innerDivStyle={menuItemStyle}><IndexLink to="/">Car App</IndexLink></MenuItem>
-          <MenuItem innerDivStyle={menuItemStyle}><Link to="/fuel">Fuel Consumption</Link></MenuItem>
+          {/*<MenuItem innerDivStyle={menuItemStyle}><Link to="/fuel">Fuel Consumption</Link></MenuItem>*/}
           <MenuItem innerDivStyle={menuItemStyle}><Link to="/travel">Travel Cost</Link></MenuItem>
           <MenuItem innerDivStyle={menuItemStyle}><Link to="/calculate">Calculate Consumption</Link></MenuItem>
           <Divider />
-          <MenuItem innerDivStyle={menuItemStyle}><Link to="/settings">Settings</Link></MenuItem>
-          <MenuItem innerDivStyle={menuItemStyle}><Link to="/logout">Log Out</Link></MenuItem>
+          {/*<MenuItem innerDivStyle={menuItemStyle}><Link to="/settings">Settings</Link></MenuItem>*/}
+          {/*<MenuItem innerDivStyle={menuItemStyle}><Link to="/logout">Log Out</Link></MenuItem>*/}
         </Drawer>
         <AppBar
           style={navStyle}
