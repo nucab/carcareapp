@@ -1,11 +1,11 @@
 import express from 'express';
-import bcrypt from 'bcrypt-nodejs';
+// import bcrypt from 'bcrypt-nodejs';
 import validateInput from '../shared/validations/addService';
 
 import User from '../models/user';
 import Services from '../models/services';
 
-let app = express();
+// let app = express();
 let router = express.Router();
 
 router

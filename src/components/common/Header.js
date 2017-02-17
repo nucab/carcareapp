@@ -12,6 +12,7 @@ import MenuItem from 'material-ui/MenuItem';
 // import FlatButton from 'material-ui/FlatButton';
 // import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
@@ -104,6 +105,9 @@ class Header extends Component {
             empty(serviceType) ?
             <IconButton className="hidden-sm hidden-md hidden-lg" onTouchTap={this.drawerToggle}><NavigationMenu className="hidden-sm hidden-md hidden-lg" /></IconButton> :
             <Link to={this.props.serviceAction == 'LIST_ENTRIES' ? '/' : '/service/' + serviceType}><IconButton><NavigationArrowBack color={'#FFF'} /></IconButton></Link>
+          }
+          iconElementRight={
+            <Link className={empty(serviceType) ? 'hidden' : ''} to={`/service/${serviceType}/add`}><IconButton ><ContentAdd /></IconButton></Link>
           }
         />
       </div>

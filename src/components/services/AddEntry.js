@@ -69,8 +69,10 @@ class AddEntry extends Component {
   }
 
   datePickerOnChange = (e, date) => {
-    const formatDateToString = dateFormat(date, 'isoDateTime');
+    const formatDateToString = dateFormat(date, 'yyyy-mm-dd hh:MM:ss');
     // console.log(formatDateToString);
+
+
     this.setState({
       replacementDate: formatDateToString
     });
@@ -101,6 +103,8 @@ class AddEntry extends Component {
         errors: {},
         isLoading: true
       });
+
+      // console.log(this.state);
 
       this.props.actions.serviceActions.addService(this.state).then(
         () => {

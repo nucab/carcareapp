@@ -5,6 +5,7 @@ import * as types from './actionTypes';
 export function addService(serviceData) {
   return dispatch => {
     return axios.post('/api/services', serviceData).then(({data}) => {
+      // console.log(data);
       dispatch(addServiceSuccess(data));
     });
   };
