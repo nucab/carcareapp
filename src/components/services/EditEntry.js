@@ -81,7 +81,7 @@ class EditEntry extends Component {
     //   service: _service
     // });
 
-    const formatDateToString = dateFormat(date, 'isoDateTime');
+    const formatDateToString = dateFormat(date, 'yyyy-mm-dd hh:MM:ss');
     service.replacementDate = formatDateToString;
     this.setState({
       service
