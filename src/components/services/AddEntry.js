@@ -58,21 +58,8 @@ class AddEntry extends Component {
     appBarActions.updatePageTitle('Add ' + serviceTypes[serviceType]);
   }
 
-  componentDidMount() {
-
-    // const { serviceActions } = this.props.actions;
-    //
-    // serviceActions.loadServicesByType(this.props.params.type);
-    // this.setState({
-    //   serviceType: this.props.params.type
-    // })
-  }
-
   datePickerOnChange = (e, date) => {
     const formatDateToString = dateFormat(date, 'yyyy-mm-dd hh:MM:ss');
-    // console.log(formatDateToString);
-
-
     this.setState({
       replacementDate: formatDateToString
     });

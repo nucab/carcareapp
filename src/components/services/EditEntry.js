@@ -80,7 +80,6 @@ class EditEntry extends Component {
     // this.setState({
     //   service: _service
     // });
-
     const formatDateToString = dateFormat(date, 'yyyy-mm-dd hh:MM:ss');
     service.replacementDate = formatDateToString;
     this.setState({
@@ -141,24 +140,11 @@ class EditEntry extends Component {
 
   render() {
     const { errors, service } = this.state;
-    // let replacementDate = service.replacementDate;
-
-    // if(!isEmpty) replacementDate = dateFormat(replacementDate);
-    // console.log(service.replacementDate);
-    // console.log(service.replacementDate);
-    // console.log(replacementDate);
-    // console.log(dateFormat(service.replacementDate));
-
-
-
-    // console.log(moment(formatReplacementDate).isValid());
-
-    // console.log(formatReplacementDate);
+    // const formatDateToString = !empty(service.replacementDate) ? dateFormat(service.replacementDate, 'yyyy-mm-dd hh:MM:ss') : {};
     return (
       <div>
         <form onSubmit={this.onSubmit} className="list">
           <DatePicker
-            format={null}
             hintText="Date Replaced"
             className="form-control"
             name="replacementDate"
@@ -171,7 +157,7 @@ class EditEntry extends Component {
             floatingLabelText="Brand Name"
             fullWidth={true}
             name="brandName"
-            value={service.brandName}
+            value={service.brandName || ''}
             onChange={this.updateServiceState}
             errorText={errors.brandName && errors.brandName}
           />
@@ -181,7 +167,7 @@ class EditEntry extends Component {
             floatingLabelText="Serial No."
             fullWidth={true}
             name="marking"
-            value={service.marking}
+            value={service.marking || ''}
             onChange={this.updateServiceState}
             errorText={errors.marking && errors.marking}
           />
@@ -191,7 +177,7 @@ class EditEntry extends Component {
             floatingLabelText="Remarks"
             fullWidth={true}
             name="remarks"
-            value={service.remarks}
+            value={service.remarks || ''}
             onChange={this.updateServiceState}
           />
           <RaisedButton disabled={this.state.isLoading} label="Save Changes" type="submit" primary={true} style={buttonStyle} />

@@ -60,10 +60,6 @@ class ManageServicePage extends Component {
     document.body.classList.remove('show-spinner');
   }
 
-  componentWillUnmount() {
-    // this.props.actions.appBarActions.updateNavAction('');
-  }
-
   render() {
     let services = this.props.services || [];
     return (
@@ -75,7 +71,9 @@ class ManageServicePage extends Component {
 }
 
 function mapStateToProps(state) {
-  return state;
+  return {
+    services: state.services
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -86,7 +84,6 @@ function mapDispatchToProps(dispatch) {
       appBarActions: bindActionCreators(appBarActions, dispatch)
     }
   };
-
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ManageServicePage);

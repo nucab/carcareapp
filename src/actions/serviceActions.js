@@ -1,4 +1,5 @@
 import axios from 'axios';
+import dateFormat from 'dateformat';
 
 import * as types from './actionTypes';
 
@@ -43,7 +44,10 @@ export function updateServiceSuccess(service) {
 
 export function loadServicesByType(serviceType = 'engine') {
   return dispatch => {
-    return axios.get('/api/services/' + serviceType).then(({data}) => {
+    return axios.get(`/api/services/${serviceType}`).then(({data}) => {
+      data.map(service => {
+        service.replacementDate = dateFormat(service.replacementDate, 'yyyy-mm-dd hh:MM:ss') || '';
+      });
       dispatch(loadServicesSuccess(data));
     }).catch(err => {
       throw err;
