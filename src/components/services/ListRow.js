@@ -2,6 +2,8 @@ import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
 import dateformat from 'dateformat';
 
+
+
 import {Card, CardText } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
@@ -16,9 +18,7 @@ const iconMenuLinkStyle = {
 	textDecoration: 'none'
 };
 
-const ListRow = (props) => {
-
-	const { entries } = props;
+const ListRow = ({openDialog, entries, serviceType, goToEditPage}) => {
 
 	return (
 		<div>
@@ -27,8 +27,8 @@ const ListRow = (props) => {
 					<CardText key={entry.id}>
 						<div className="right-col">
 							<IconMenu className="icon-menu" style={{marginTop: -10}} iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}>
-								<Link style={iconMenuLinkStyle} to={`/service/${props.serviceType}/edit/${entry.id}`}><MenuItem>Edit</MenuItem></Link>
-								<Link style={iconMenuLinkStyle} to=""><MenuItem>Delete</MenuItem></Link>
+								<MenuItem onTouchTap={goToEditPage(`/service/${serviceType}/edit/${entry.id}`)}>Edit</MenuItem>
+                <MenuItem onTouchTap={openDialog}>Delete</MenuItem>
 							</IconMenu>
 						</div>
 						<div className="left-col">

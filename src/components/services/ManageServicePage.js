@@ -2,6 +2,10 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+
 import { isEmpty } from 'lodash';
 
 import * as serviceActions from '../../actions/serviceActions';
@@ -33,6 +37,10 @@ class ManageServicePage extends Component {
    */
   constructor(props) {
     super(props);
+
+    this.state = {
+      open: false
+    };
   }
 
   componentWillMount() {
@@ -60,11 +68,48 @@ class ManageServicePage extends Component {
     document.body.classList.remove('show-spinner');
   }
 
+  goToEditPage = (url) => {
+    console.log(this.context.router);
+    // this.context.router.push(url);
+  }
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
+
   render() {
     let services = this.props.services || [];
+
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+      />,
+      <FlatButton
+        label="Submit"
+        primary={true}
+        keyboardFocused={true}
+        onTouchTap={this.handleClose}
+      />,
+    ];
+
     return (
       <div>
-        <ListRow entries={services} serviceType={this.props.params.serviceType} />
+        <ListRow goToEditPage={this.goToEditPage} openDialog={this.handleOpen} entries={services} serviceType={this.props.params.serviceType} />
+        <Dialog
+          title="Dialog With Actions"
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+        >
+          The actions in this window were passed in as an array of React objects.
+        </Dialog>
       </div>
     );
   }
